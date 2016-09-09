@@ -10,6 +10,6 @@ WORKDIR $TARGET_DIR
 
 COPY usage.txt $TARGET_DIR
 
-RUN npm install grunt-cli nodemon
+RUN npm install -g grunt-cli grunt-init nodemon
 
 CMD cat $TARGET_DIR/usage.txt
