@@ -1,0 +1,16 @@
+This container does nothing when invoking it without a command.
+
+Usage example:
+$ docker run -it --rm -e HOME=$HOME --net=host --user="$(id -u):$(id -g)" -v "$HOME":"$HOME" -v "$PWD":"$PWD" -v /tmp:/tmp -w "$PWD" mvdbos/nodedev:latest <your-command-with-arguments>
+
+In the example above, the mounted host directory is your current working directory.
+This is the most common case, because it enables you to run the java tools on everything in
+and below that directory.
+
+Available commands in the container:
+
+* npm
+* grunt
+* nodemon
+
+* sh (or any other command)
